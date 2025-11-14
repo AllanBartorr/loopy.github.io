@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavbarHandler from './components/NavbarHandler';
 import PlanoPersonalizado from './components/PlanoPersonalizado';
-
+import FAQSection from './components/Faq';
 
 
 function App() {
@@ -271,7 +271,15 @@ useEffect(() => {
                         </div>
                     </div>
                 </section>
-                
+                {/* SEÇÃO 3: Planos (Index 2) */}
+                <section id='FAQ'>
+                    <img src="img/Faq.png" id="img-faq" alt="faq"/> 
+                    <div className="App">
+                    <h2 className="section-title"> FAQ</h2>
+                    <FAQSection /> 
+                    </div>
+                </section>
+
                 {/* Seção 5: Sobre/Placeholder para a última seção (Index 4) */}
                 <section id="sobre" ref={(el) => setSectionRef(el, 4)}> 
                 </section>
@@ -313,7 +321,7 @@ useEffect(() => {
             <h4 className="footer-title">Recursos</h4>
             <ul className="footer-menu">
                 <li><a href="#testimonials">Depoimentos</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="#FAQ">FAQ</a></li>
             </ul>
         </div>
         {/* 💡 NOVO BOTÃO: Voltar ao Topo */}

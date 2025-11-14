@@ -1,0 +1,92 @@
+/* Container Geral */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif; /* Simulação da fonte */
+}
+
+/* Títulos */
+.main-title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #1a1a1a; /* Cor escura */
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Item do FAQ (Acordeão) */
+.faq-item {
+  border-bottom: 1px solid #e0e0e0; /* Linha de separação sutil */
+}
+
+.faq-question-button {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 20px 0;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333; /* Cor do texto da pergunta */
+  transition: color 0.2s;
+}
+
+.faq-question-button:hover {
+  color: #007bff; /* Efeito hover sutil */
+}
+
+.faq-question-text {
+  flex-grow: 1;
+  margin-right: 15px;
+  line-height: 1.5;
+}
+
+/* Ícone de Seta */
+.faq-arrow {
+  font-size: 14px;
+  color: #007bff; /* Azul característico */
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.faq-arrow.open {
+  transform: rotate(90deg); /* Gira a seta quando aberto */
+}
+
+/* Conteúdo da Resposta */
+.faq-answer-content {
+  padding: 10px 0 20px 0;
+  overflow: hidden;
+  /* Animação de expansão (pode ser adicionada com bibliotecas ou transições mais complexas) */
+}
+
+.faq-answer-content p {
+  margin: 0;
+  padding-right: 30px; /* Espaço para não bater na lateral */
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+#img-faq{
+    width: 50%;
+    border-radius: 0% 20% 30% 00% ;
+    object-fit: cover;
+}
+
+#FAQ{
+    display: flex;
+    padding: 0;
+}
