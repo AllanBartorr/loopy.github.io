@@ -5,6 +5,7 @@ import './styles/styles.css';
 // 1. Importa o componente App (que usa o Hook)
 import App from './App'; 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

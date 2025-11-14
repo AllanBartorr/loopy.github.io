@@ -1,68 +1,140 @@
-#function{
-    min-height: calc(100dvh - 91px);   
+/* Variáveis para facilitar a manutenção */
+:root {
+    --primary-color: #6a0dad; /* Roxo Profundo (ex. blueviolet) */
+    --secondary-color: #3f0071; /* Roxo Escuro */
+    --text-dark: #333333;
+    --text-light: #666666;
+    --card-background: #ffffff; /* Fundo branco para os cards */
+    --shadow-light: rgba(106, 13, 173, 0.1);
+    --shadow-hover: rgba(106, 13, 173, 0.3);
 }
 
-#function .section-title{
+/* Base da Seção */
+#function {
+    padding: 50px 20px; /* Padding interno para melhor visual */
+    background-color: #f9f9f9; /* Fundo leve para destacar a seção */
+    min-height: auto; /* Não forçar 100vh se o conteúdo for menor */
+    border-radius: 0% 30% 30% 30%;
+}
+
+/* Títulos */
+#function .section-title {
     text-align: center;
-    font-weight: 700; 
-    padding: 10px;
-    color: blueviolet;
+    font-weight: 800; /* Mais impacto */
+    font-size: 2.5rem; /* Tamanho maior */
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
-#function p{
-    padding: 20px;
-    color: rgb(76, 0, 147);
-    font-size: 1rem;
+#function .section-subtitle {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 40px; /* Espaçamento maior antes do grid */
 }
 
-#function .section-subtitle{
-     text-align: center;
-     font-weight: 500; 
-     padding: 7px;
-     margin-bottom: 1%;
+#function .highlight {
+    color: var(--primary-color);
+    font-weight: 700;
 }
-#function .section-subtitle span{
-    color: blueviolet;
-    font: bold;
-}
-#grid{
+
+/* Grid Container */
+.grid-container { /* Classe em vez de ID #grid */
     display: grid;
-    gap: 18px;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
+    gap: 30px; /* Espaçamento mais generoso */
+    max-width: 1200px; /* Limite de largura para desktop */
+    margin: 0 auto; /* Centraliza o grid */
+    
+    /* Layout padrão para Desktop (3 colunas) */
     grid-template-columns: repeat(3, 1fr);
 }
 
-#grid-function{
-    height: 200px;
-    padding: 10px;
-    border-radius: 10px;
-    width: 100%;
-    background-color: rgba(17, 86, 136, 0.178);
-    color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 10px 2px rgba(83, 18, 189, 0.381);
-    transition: transform .3s ease, background-color .3s ease;
-    
+/* Card de Funcionalidade (Substitui #grid-function) */
+.grid-function-card {
+    padding: 25px;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow-light); /* Sombra suave */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    min-height: 220px; /* Altura mínima para consistência visual */
+    display: flex; /* Para alinhar o conteúdo verticalmente */
+    flex-direction: column;
+    justify-content: flex-start;
 }
-#grid-function:hover{
-    box-shadow: 0px 0px 12px 8px rgba(96, 39, 190, 0.381);
-    transform: translateY(-10px); 
+
+/* Efeito Hover Moderno */
+.grid-function-card:hover {
+    box-shadow: 0 10px 25px var(--shadow-hover); /* Sombra mais intensa no hover */
+    transform: translateY(-8px); /* Elevação sutil */
+    /* border: 2px solid var(--primary-color); */ /* Opcional: Borda para destaque */
 }
-#grid-function h4{
-    color: rgb(0, 0, 0);
-    font-size: larger;
-    font-weight: bold;
 
-}   
+/* Título do Card */
+.grid-function-card h4 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-@media screen and (max-width: 450px){
-    #grid{
-        flex-wrap: nowrap;
-        justify-content: center;
-        grid-template-columns: repeat(1, 1fr);
+/* Ícones */
+.grid-function-card h4 i {
+    color: var(--primary-color);
+    margin-right: 8px;
+    font-size: 1.5rem;
+}
+
+/* Parágrafos */
+.grid-function-card p {
+    padding: 0; /* Remove padding desnecessário */
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ----------------------------------
+ * RESPONSIVIDADE (MEDIA QUERIES)
+ * ---------------------------------- */
+
+/* Para Tablets e Telas Médias (max-width: 900px) */
+@media (max-width: 900px) {
+    .grid-container {
+        /* Muda para 2 colunas */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 15px;
     }
-    #grid-function{
-        width: calc(50% -18px);
+    
+    #function .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Para Celulares (max-width: 600px) */
+@media (max-width: 600px) {
+    .grid-container {
+        /* Muda para 1 coluna */
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    #function {
+        padding: 30px 10px;
+    }
+
+    #function .section-title {
+        font-size: 1.8rem;
+    }
+    
+    /* Remove a transformação no hover em telas pequenas para evitar bugs */
+    .grid-function-card:hover {
+        transform: none; 
+        box-shadow: 0 4px 15px var(--shadow-light); 
     }
 }

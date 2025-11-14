@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'; // 🚨 Importação do useEffect é crucial!
+import React, { useEffect, useState } from 'react';
 import NavbarHandler from './components/NavbarHandler';
 import PlanoPersonalizado from './components/PlanoPersonalizado';
 
 
 
 function App() {
-    // 1. Chamada do Custom Hook NavbarHandler()
     const { 
         isMobileMenuOpen, 
         toggleMobileMenu,
@@ -146,9 +145,11 @@ useEffect(() => {
                 <section id="home" ref={(el) => setSectionRef(el, 0)}>
                     <div id="cta">
                         <h1 className="title"> Soluções completas de atendimento com <span>Inteligência artificial</span></h1>
-                        <p className="description"> Quem responde primeiro, vende mais.</p>
+                        <h2 className="description"> Quem responde primeiro, vende mais.</h2>
+                        <p className="description">Com a nossa plataforma, sua empresa proporciona uma experiência única de atendimento <span>multicanal</span>, unificado e integrando os principais canais de comunicação em um só lugar. </p> 
+                        <h3 className="description">   Solução que conquista e <span>fideliza</span> seus clientes. </h3>
                         <div id="cta_button">
-                            <a href="#"> <button className="btn-default">Assine já</button></a>
+                            <a href="#planos"> <button className="btn-default">Assine já</button></a>
                             <a href="tel:+5555555555">
                                 <button className="btn-default">
                                     <i className="fa-solid fa-phone"></i>
@@ -169,37 +170,44 @@ useEffect(() => {
                 </section> 
                 
                 {/* SEÇÃO 2: Funcionalidade (Index 1) */}
-                <section id="function" ref={(el) => setSectionRef(el, 1)}>
-                    <h1 className="section-title">Funcionalidades</h1>
-                    <h3 className="section-subtitle">Transforme seu atendimento com a <span>Loopy</span></h3>
-                    <div id="grid">
-                        {/* Itens do Grid */}
-                        <div id="grid-function">
-                            <h4> <i className="fa-solid fa-robot"></i> Chatbot Avançado</h4>
-                            <p>Automatize conversas com inteligência artificial que entende e responde seus clientes em tempo real, 24 horas por dia.</p>
-                        </div>
-                        <div id="grid-function">
-                              <h4> <i className="fa-solid fa-chart-simple"></i> Relatórios Completo</h4>
-                            <p>Acompanhe métricas detalhadas de atendimento, desempenho da equipe e satisfação dos clientes com dashboards interativos.</p>
-                        </div>
-                        <div id="grid-function">
-                            <h4> <i className="fa-solid fa-business-time"></i> Agendamento</h4>
-                            <p>Permita que seus clientes agendem atendimentos, reuniões ou serviços diretamente pelo chat, com confirmação automática.</p>
-                        </div>
-                        <div id="grid-function">
-                            <h4> <i className="fa-solid fa-earth-americas"></i> Plataforma Web</h4>
-                            <p>Gerencie todo o fluxo de atendimento em um painel web intuitivo, acessível de qualquer lugar e dispositivo.</p>
-                        </div>
-                        <div id="grid-function">
-                            <h4> <i className="fa-solid fa-comments"></i> Atendimento Rápido</h4>
-                            <p>Reduza filas e melhore a experiência do cliente com respostas imediatas e encaminhamentos automáticos.</p>
-                        </div>
-                        <div id="grid-function">
-                            <h4>  <i className="fa-solid fa-users-gear"></i> Suporte Especializado</h4>
-                            <p>Conte com uma equipe técnica preparada para personalizar, integrar e otimizar sua solução Loopy conforme sua necessidade.</p>
-                        </div>
-                    </div>
-                </section>
+               <section id="function" ref={(el) => setSectionRef(el, 1)}>
+    <h1 className="section-title">Funcionalidades</h1>
+    <h3 className="section-subtitle">Transforme seu atendimento com a <span className="highlight">Loopy</span></h3>
+    
+    <div className="grid-container"> {/* ID trocado para Classe */}
+        
+        {/* Itens do Grid (ID 'grid-function' trocado para Classe 'grid-function-card') */}
+        <div className="grid-function-card">
+            <h4> <i className="fa-solid fa-robot"></i> Chatbot Avançado</h4>
+            <p>Automatize conversas com inteligência artificial que entende e responde seus clientes em tempo real, 24 horas por dia.</p>
+        </div>
+        
+        <div className="grid-function-card">
+            <h4> <i className="fa-solid fa-chart-simple"></i> Relatórios Completo</h4>
+            <p>Acompanhe métricas detalhadas de atendimento, desempenho da equipe e satisfação dos clientes com dashboards interativos.</p>
+        </div>
+        
+        <div className="grid-function-card">
+            <h4> <i className="fa-solid fa-business-time"></i> Agendamento</h4>
+            <p>Permita que seus clientes agendem atendimentos, reuniões ou serviços diretamente pelo chat, com confirmação automática.</p>
+        </div>
+        
+        <div className="grid-function-card">
+            <h4> <i className="fa-solid fa-earth-americas"></i> Plataforma Web</h4>
+            <p>Gerencie todo o fluxo de atendimento em um painel web intuitivo, acessível de qualquer lugar e dispositivo.</p>
+        </div>
+        
+        <div className="grid-function-card">
+            <h4> <i className="fa-solid fa-comments"></i> Atendimento Rápido</h4>
+            <p>Reduza filas e melhore a experiência do cliente com respostas imediatas e encaminhamentos automáticos.</p>
+        </div>
+        
+        <div className="grid-function-card">
+            <h4> <i className="fa-solid fa-users-gear"></i> Suporte Especializado</h4>
+            <p>Conte com uma equipe técnica preparada para personalizar, integrar e otimizar sua solução Loopy conforme sua necessidade.</p>
+        </div>
+    </div>
+</section>
 
                 {/* SEÇÃO 3: Planos (Index 2) */}
                 <section id="planos" ref={(el) => setSectionRef(el, 2)}>

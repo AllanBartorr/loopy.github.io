@@ -103,11 +103,9 @@
 /* 5. LINHA DE COPYRIGHT                                   */
 /* ======================================================= */
 #footer-bottom {
-    /* Linha divisória clara sobre o fundo escuro/transparente */
-    border-top: 1px solid rgba(255, 255, 255, 0.2); 
     text-align: center;
     padding: 15px 8%;
-    position: relative; /* Garante que fique acima da onda */
+    position: relative; 
     z-index: 2;
 }
 

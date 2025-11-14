@@ -1,75 +1,174 @@
-#testimonials{
-  min-height: calc(100dvh - 91px);   
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 48px;
-}
-#logoTest{
-    width: 500px;
-    height: auto;
-}
-#testimonials .section-title{
-    font-size: 3rem;
-    color: blueviolet;
+/* Variáveis para consistência (opcional, mas recomendado) */
+:root {
+    --primary-color: #6a0dad; /* Roxo Profundo */
+    --secondary-color: #3f0071; /* Roxo Escuro */
+    --text-dark: #333333;
+    --star-color: #ffc107; /* Amarelo das estrelas */
+    --shadow-base: rgba(106, 13, 173, 0.15);
 }
 
-#testimonials .section-subtitle{
-    font-size: 2rem;
-}
-#testimonials-content{
-    width: 50%;
-}
-#feedbacks{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-.feedback{
+/* 1. SEÇÃO PRINCIPAL: Controle de Espaçamento e Layout em Desktop */
+#testimonials {
     display: flex;
     align-items: center;
-    gap: 20px;
-    background-color: #fff;
-    padding: 12px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px 2px rgba(83, 18, 189, 0.381);
+    justify-content: center;
+    gap: 60px; /* Aumentei a distância entre o logo e o conteúdo */
+    
+    /* Centraliza e limita a largura total da seção em monitores grandes */
+
+    margin: 0 auto; 
+    background-color: #ffffff;
+    border-radius: 20% 30%;
 }
 
+/* 2. LOGO */
+#logoTest {
+    width: 450px; /* Ligeiramente menor */
+    height: auto;
+    object-fit: contain;
+    /* Efeito de Opacidade/Suavidade (Opcional) */
+    opacity: 0.9; 
+}
 
-.feedback-content p{
+/* 3. CONTEÚDO (Texto + Depoimentos) */
+#testimonials-content {
+    width: 50%; /* Mantido */
+    max-width: 600px; /* Limita a largura do conteúdo, mesmo que a tela seja enorme */
+}
+
+/* Títulos */
+#testimonials .section-title {
+    font-size: 2.5rem; /* Padrão moderno */
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+#testimonials .section-subtitle {
+    font-size: 1.2rem; /* Padrão moderno */
+    color: var(--text-dark);
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* 4. FEEDBACKS CONTAINER */
+#feedbacks {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Mais espaço entre os cards */
+    margin-bottom: 0;
+}
+
+/* 5. CARD DE FEEDBACK */
+.feedback {
+    display: flex;
+    align-items: flex-start; /* Alinha o avatar no topo do texto */
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-base); /* Sombra mais suave */
+    transition: transform 0.3s ease;
+    border-left: 5px solid var(--primary-color); /* Toque de cor moderno */
+}
+
+.feedback:hover {
+    transform: translateY(-5px); /* Efeito de elevação sutil */
+    box-shadow: 0 8px 20px rgba(106, 13, 173, 0.25);
+}
+
+.feedback-avatar {
+    width: 50px; /* Tamanho fixo para o avatar */
+    min-width: 50px; /* Garante que não diminua */
+    height: 50px;
+    border-radius: 50%; /* Avatar redondo */
+    object-fit: cover;
+}
+
+/* Conteúdo do Feedback */
+.feedback-content {
+    flex-grow: 1;
+}
+
+.feedback-content p:first-child {
     display: flex;
     justify-content: space-between;
-}
-.feedback-content p span{
-    margin-left: 20px;
-}
-.feedback-content p i{
-    color: #e9a209;
-}
-.feedback-avatar{
-    width: 10%;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
 }
 
-@media screen and (max-width: 450px){
-    #testimonials{
-        flex-direction: column;
+.feedback-content p:last-child {
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+.feedback-content p span {
+    margin-left: 20px;
+}
+
+.feedback-content p i {
+    color: var(--star-color);
+}
+
+
+/* ----------------------------------
+ * RESPONSIVIDADE (MEDIA QUERIES)
+ * ---------------------------------- */
+
+/* Para Tablets e Telas Médias (max-width: 992px) */
+@media (max-width: 992px) {
+    #testimonials {
+        flex-direction: column; /* Coloca logo e conteúdo um abaixo do outro */
+        gap: 40px;
+        padding: 50px 20px;
     }
-    #testimonials .section-subtitle{
+
+    #logoTest {
+        width: 300px; /* Reduz o logo */
+    }
+
+    #testimonials-content {
+        width: 100%; /* Ocupa toda a largura */
+        padding: 0 15px;
+    }
+}
+
+/* Para Celulares (max-width: 600px) */
+@media (max-width: 600px) {
+    #testimonials {
+        padding: 30px 10px;
+    }
+    
+    #logoTest {
+        width: 250px;
+    }
+
+    #testimonials .section-title {
+        font-size: 2rem;
         text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 10px;
     }
-    #testimonials-content{
-        width:100% ;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    
+    #testimonials .section-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
     }
-    .feedback-content p{
-        margin-top: 10px;
+
+    .feedback {
+        padding: 15px;
+        gap: 10px;
+        flex-wrap: wrap; /* Permite quebrar a linha se necessário */
     }
-     .feedback-content span{
+
+    .feedback-avatar {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+    }
+    
+    /* Ocultar estrelas em celular para simplificar (mantido do seu código) */
+    .feedback-content p span {
         display: none;
-     }
+    }
 }
