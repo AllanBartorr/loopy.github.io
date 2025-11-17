@@ -91,3 +91,13 @@
     padding: 0;
     justify-content: center;
 }
+
+h1 span{
+  color: blueviolet;
+}
+.faq-question-text{
+  font-weight: 800;
+}
+.faq-answer-content{
+  font-weight: 500;
+}

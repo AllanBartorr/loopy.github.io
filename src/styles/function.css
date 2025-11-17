@@ -109,7 +109,9 @@
         gap: 20px;
         padding: 0 15px;
     }
-    
+    #function{
+        border-radius: 0% 10% 10% 10%; ;
+    }
     #function .section-title {
         font-size: 2rem;
     }
@@ -135,5 +137,10 @@
     .grid-function-card:hover {
         transform: none; 
         box-shadow: 0 4px 15px var(--shadow-light); 
+    }
+}
+@media (max-width: 1500px) {
+ #function{
+        border-radius: 0% 10% 10% 10%;
     }
 }
