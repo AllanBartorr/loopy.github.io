@@ -165,7 +165,7 @@ useEffect(() => {
                         </div>
                     </div>
                     <div id="banner">
-                        <img src="img/hero-lp.jpeg" alt="banner"/>
+                        <img src="img/hero-lp.png" alt="banner"/>
                     </div>
                 </section> 
                 
