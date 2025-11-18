@@ -69,15 +69,7 @@ transition: box-shadow .3s ease;
     box-shadow: 0px 0px 12px 8px rgba(96, 39, 190, 0.381);
 }
 
-#banner{
-    display: flex;
-    align-items: start;
-    width: 70%;
-}
-#banner img{
-    height: 90%;
-    width: fit-content;
-}
+
 /* 1. ESTADO INICIAL (Elemento escondido fora da tela) */
 .section-hidden {
     opacity: 0; /* Totalmente invisível */

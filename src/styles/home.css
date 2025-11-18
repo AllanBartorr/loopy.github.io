@@ -13,9 +13,17 @@
     font-weight: 500; 
 }
 #banner{
-    width: 50%;
+    width: 65%; 
+    background-color: rgb(255, 255, 255);
+   border-radius: 10% 15% 10% 20%;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
-
+#banner img{
+    width: 100%;
+    border-radius: 15%;
+}
 
 #cta .title{
     font-size: 2rem;

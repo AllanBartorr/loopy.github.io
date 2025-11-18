@@ -7,7 +7,7 @@ import FAQSection from './components/Faq';
 function App() {
     const { 
         isMobileMenuOpen, 
-        toggleMobileMenu,
+        toggleMobileMenu,   
         handleNavigationClick,
         headerRef, 
         navItemRefs, 
@@ -165,7 +165,7 @@ useEffect(() => {
                         </div>
                     </div>
                     <div id="banner">
-                        <img src="img/hero-lp.png" alt="banner"/>
+                        <img src="img/hero-lp.jpeg" alt="banner"/>
                     </div>
                 </section> 
                 
@@ -309,8 +309,6 @@ useEffect(() => {
             <h4 className="footer-title">Produto</h4>
             <ul className="footer-menu">
                 <li><a href="#function">Funcionalidades</a></li>
-                <li><a href="#">Sistema</a></li>
-                <li><a href="#">Integrações</a></li>
                 <li><a href="#planos">Preços</a></li>
             </ul>
         </div>
