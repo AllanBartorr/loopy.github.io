@@ -537,10 +537,8 @@ export default function App() { // Componente principal App, padrão para a visu
             </div>
 
             {/* Background do aviso ajustado para transparente ou quase */}
-            <div className={`rounded-2xl p-4 text-xs text-zinc-700 border border-zinc-400 bg-zinc-100/60 ${SHADOW}`}>
-              <div>Valores meramente ilustrativos. Impostos podem variar conforme sua localidade.</div>
-              <div className="mt-1">Suporte e onboarding inclusos em todos os planos.</div>
-            </div>
+
+        
           </div>
         </div>
       </div>

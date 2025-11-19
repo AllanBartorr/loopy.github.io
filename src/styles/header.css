@@ -90,9 +90,27 @@ header{
     transform: translateY(0); /* Move para a posição original (animado) */
 }
 
-/* ======================================================= */
-/* 4. MEDIA QUERY (Responsividade)                         */
-/* ======================================================= */
+.button-div{
+    padding: 0;  
+    display: flex;  
+    gap: 10px;
+}
+
+
+
+.btn-login{
+    border:solid, #8264be;
+    border-radius: 30%;
+    color: #8264be;
+    padding: 10px;
+}
+.btn-login:hover{
+    border: none;
+    background-color: #8264be;
+    color: white;
+    box-shadow: inset ;
+     border:solid, #8264be;
+}
 
 @media screen and (max-width: 1170px){
     /* Oculta os itens normais (lista e botão 'Começar Agora') */

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NavbarHandler from './components/NavbarHandler';
 import PlanoPersonalizado from './components/PlanoPersonalizado';
 import FAQSection from './components/Faq';
+import LoginScreen from './components/LoginScreen';
 
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
     const setSectionRef = (el, index) => {
         if (el) sectionRefs.current[index] = el;
     };
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
+
 
     useEffect(() => {
         // Seleciona todas as seções que queremos animar (exceto a primeira, #home)
@@ -75,9 +80,14 @@ useEffect(() => {
             window.removeEventListener('scroll', toggleVisibility);
         };
     }, []);
-    // ----------------------------------------------------
-    // --- RENDERIZAÇÃO DO COMPONENTE ---
-    // ----------------------------------------------------
+
+            if (showLogin) {
+            return (
+                <LoginScreen onBackToHome={() => setShowLogin(false)} />
+            );
+        }
+
+
     return (
         <>
             <header ref={headerRef}>
@@ -100,16 +110,21 @@ useEffect(() => {
                            <a href="#sobre" onClick={(e) => handleNavigationClick(e, 'sobre')}>Sobre</a>
                         </li>
                     </ul>
+                    <div className='button-div'>
                     <button 
                         className="btn-default"
                         onClick={(e) => handleNavigationClick(e, 'planos')}
                     >
                         Começar Agora
                     </button>
+                    <button className='btn-login' onClick={() => setShowLogin(true)}>
+                        {isLoggedIn ? 'Meu Perfil' : 'Entrar'}
+                    </button>
                     
                     <button id="mobile_btn" onClick={toggleMobileMenu}> 
                         <i className="fa-solid fa-bars"></i>
                     </button>
+                    </div>
                 </nav>
                 
                 <div id="mobile_menu" className={isMobileMenuOpen ? 'open' : ''}>
@@ -134,6 +149,12 @@ useEffect(() => {
                     onClick={(e) => handleNavigationClick(e, 'planos')}>
                         Começar Agora
                     </button>  
+                                                            <button 
+                        className="btn-default"
+                        onClick={(e) => handleNavigationClick(e, 'planos')}
+                    >
+                        Logar
+                    </button>
                 </div>
             </header>
 
